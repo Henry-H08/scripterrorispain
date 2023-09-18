@@ -118,8 +118,4 @@ player.onUpdate(() => {
 	}
 })
 
-// Enter inspect mode, which shows the collider outline of each object with area() component, handy for debugging
-// Can also be toggled by pressing F1
-debug.inspect = true
 
-// Check out https://kaboomjs.com#AreaComp for everything area() provides
