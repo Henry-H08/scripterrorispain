@@ -1,38 +1,24 @@
-// Collision handling
+// Input handling and basic player movement
 
 // Start kaboom
-kaboom({
-	scale: 2,
-})
-
-
+kaboom()
 
 // Load assets
 loadSprite("bean", "sprites/bean.png")
-loadSprite("ghosty", "sprites/ghosty.png")
-loadSprite("grass", "sprites/grass.png")
-loadSprite("steel", "sprites/steel.png")
 
-// Define player movement speed
+// Define player movement speed (pixels per second)
 const SPEED = 320
 
 // Add player game object
 const player = add([
 	sprite("bean"),
-	pos(80, 40),
-	color(),
-	rotate(0),
-	// area() component gives the object a collider, which enables collision checking
-	area(),
-	// area({ shape: new Polygon([vec2(0), vec2(100), vec2(-100, 100)]) }),
-	// area({ shape: new Rect(vec2(0), 12, 120) }),
-	// area({ scale: 0.5 }),
-	// body() component makes an object respond to physics
-	body(),
+	// center() returns the center point vec2(width() / 2, height() / 2)
+	pos(center()),
 ])
 
-// Register input handlers & movement
+// onKeyDown() registers an event that runs every frame as long as user is holding a certain key
 onKeyDown("left", () => {
+	// .move() is provided by pos() component, move by pixels per second
 	player.move(-SPEED, 0)
 })
 
@@ -48,74 +34,15 @@ onKeyDown("down", () => {
 	player.move(0, SPEED)
 })
 
-onKeyDown("q", () => {
-	player.angle -= SPEED * dt()
+// onClick() registers an event that runs once when left mouse is clicked
+onClick(() => {
+	// .moveTo() is provided by pos() component, changes the position
+	player.moveTo(mousePos())
 })
-
-onKeyDown("e", () => {
-	player.angle += SPEED * dt()
-})
-
-// Add enemies
-for (let i = 0; i < 3; i++) {
-
-	const x = rand(0, width())
-	const y = rand(0, height())
-
-	add([
-		sprite("ghosty"),
-		pos(x, y),
-		// Both objects must have area() component to enable collision detection between
-		area(),
-		"enemy",
-	])
-
-}
 
 add([
-	sprite("grass"),
-	pos(center()),
-	area(),
-	// This game object also has isStatic, so our player won't be able to move pass this
-	body({ isStatic: true }),
-	"grass",
+	// text() component is similar to sprite() but renders text
+	text("Press arrow keys", { width: width() / 2 }),
+	pos(12, 12),
 ])
-
-add([
-	sprite("steel"),
-	pos(100, 200),
-	area(),
-	// This will not be static, but have a big mass that's hard to push over
-	body({ mass: 10 }),
-])
-
-// .onCollide() is provided by area() component, it registers an event that runs when an objects collides with another object with certain tag
-// In this case we destroy (remove from game) the enemy when player hits one
-player.onCollide("enemy", (enemy) => {
-	destroy(enemy)
-})
-
-// .onCollideUpdate() runs every frame when an object collides with another object
-player.onCollideUpdate("enemy", () => {
-})
-
-// .onCollideEnd() runs once when an object stopped colliding with another object
-player.onCollideEnd("grass", (a) => {
-	debug.log("leave grass")
-})
-
-// .clicks() is provided by area() component, it registers an event that runs when the object is clicked
-player.onClick(() => {
-	debug.log("what up")
-})
-
-player.onUpdate(() => {
-	// .isHovering() is provided by area() component, which returns a boolean of if the object is currently being hovered on
-	if (player.isHovering()) {
-		player.color = rgb(0, 0, 255)
-	} else {
-		player.color = rgb()
-	}
-})
-
 
