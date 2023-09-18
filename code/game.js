@@ -1,7 +1,7 @@
 kaboom()
 
-loadSprite("bean", "/sprites/bean.png")
-loadSprite("ghosty", "/sprites/ghosty.png")
+loadSprite("bean", "sprites/bean.png")
+loadSprite("ghosty", "sprites/ghosty.png")
 
 const nucleus = add([
 	sprite("ghosty"),
