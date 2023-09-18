@@ -73,7 +73,7 @@ for (let i = 12; i < 24; i++) {
 
 nucleus.onUpdate(() => {
 
-	nucleus.pos = beanPos()
+	nucleus.pos = playerPos()
 
 	// update children
 	nucleus.children.forEach((child) => {
