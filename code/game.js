@@ -35,6 +35,11 @@ nucleus.onUpdate(() => {
 	})
 
 })
+for (let i = 0; i < 3; i++) {
+
+	const x = rand(0, width())
+	const y = rand(0, height())
+
 
 add([
 		sprite("steel"),
