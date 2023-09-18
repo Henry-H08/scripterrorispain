@@ -30,8 +30,7 @@ nucleus.onUpdate(() => {
 	// update children
 	nucleus.children.forEach((child) => {
 		child.angle += child.speed * dt()
-		child.onCollide("enemy", (enemy) => {
-			destroy(enemy)
+		
 	})
 
 })
