@@ -30,6 +30,17 @@ nucleus.onUpdate(() => {
 	// update children
 	nucleus.children.forEach((child) => {
 		child.angle += child.speed * dt()
+		child.onCollide("enemy", (enemy) => {
+			destroy(enemy)
 	})
 
 })
+
+add([
+		sprite("steel"),
+		pos(x, y),
+		// Both objects must have area() component to enable collision detection between
+		area(),
+		"enemy",
+	])
+
