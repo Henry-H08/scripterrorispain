@@ -4,8 +4,7 @@
 kaboom()
 
 // Load a sprite asset from "sprites/bean.png", with the name "bean"
-loadSprite("bean", "/sprites/bean.png")
-loadSprite("ghosty", "/sprites/ghosty.png")
+loadSprite("apple", "/sprites/apple.png")
 
 // A "Game Object" is the basic unit of entity in kaboom
 // Game objects are composed from components
@@ -13,7 +12,7 @@ loadSprite("ghosty", "/sprites/ghosty.png")
 
 // add() assembles a game object from a list of components and add to game, returns the reference of the game object
 const player = add([
-	sprite("bean"),   // sprite() component makes it render as a sprite
+	sprite("apple"),   // sprite() component makes it render as a sprite
 	pos(120, 80),     // pos() component gives it position, also enables movement
 	rotate(0),        // rotate() component gives it rotation
 	anchor("center"), // anchor() component defines the pivot point (defaults to "topleft")
@@ -34,7 +33,7 @@ for (let i = 0; i < 3; i++) {
 	const y = rand(0, height())
 
 	add([
-		sprite("ghosty"),
+		sprite("apple"),
 		pos(x, y),
 	])
 
