@@ -47,7 +47,7 @@ for (let i = 0; i < 3; i++) {
 	const y = rand(0, height())
 
 	add([
-		sprite("ghosty"),
+		sprite("steel"),
 		pos(x, y),
 		// Both objects must have area() component to enable collision detection between
 		area(),
