@@ -5,10 +5,7 @@ loadSprite("ghosty", "sprites/ghosty.png")
 loadSprite("steel", "sprites/steel.png")
 loadSprite("grass", "sprites/grass.png")
 
-kaboom()
 
-loadSprite("bean", "sprites/bean.png")
-loadSprite("ghosty", "sprites/ghosty.png")
 
 const nucleus = add([
 	sprite("ghosty"),
