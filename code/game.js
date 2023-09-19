@@ -43,7 +43,7 @@ add([
 		area(),
 
 add([
-		sprite("steel"),
+		sprite("grass"),
 		pos(25, 25),
 		// Both objects must have area() component to enable collision detection between
 		area(),
