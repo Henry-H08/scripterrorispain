@@ -5,8 +5,13 @@ loadSprite("ghosty", "sprites/ghosty.png")
 loadSprite("steel", "sprites/steel.png")
 loadSprite("grass", "sprites/grass.png")
 
+kaboom()
+
+loadSprite("bean", "/sprites/bean.png")
+loadSprite("ghosty", "/sprites/ghosty.png")
+
 const nucleus = add([
-	sprite("grass"),
+	sprite("ghosty"),
 	pos(center()),
 	anchor("center"),
 ])
@@ -32,21 +37,6 @@ nucleus.onUpdate(() => {
 	// update children
 	nucleus.children.forEach((child) => {
 		child.angle += child.speed * dt()
-		
 	})
 
 })
-add([
-		sprite("steel"),
-		pos(25, 25),
-		// Both objects must have area() component to enable collision detection between
-		area(),
-
-add([
-		sprite("grass"),
-		pos(25, 25),
-		// Both objects must have area() component to enable collision detection between
-		area(),
-		"enemy",
-	])
-
