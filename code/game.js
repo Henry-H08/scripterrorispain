@@ -29,7 +29,7 @@ for (let i = 12; i < 24; i++) {
 
 nucleus.onUpdate(() => {
 
-	nucleus.pos = mousePos()
+	nucleus.pos = center();
 
 	// update children
 	nucleus.children.forEach((child) => {
@@ -37,18 +37,3 @@ nucleus.onUpdate(() => {
 	})
 
 })
-
-for (let i = 0; i < 3; i++) {
-
-	const x = rand(0, width())
-	const y = rand(0, height())
-
-	add([
-		sprite("steel"),
-		pos(x, y),
-		// Both objects must have area() component to enable collision detection between
-		area(),
-		"enemy",
-	])
-
-}
