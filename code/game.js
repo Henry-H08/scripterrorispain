@@ -3,9 +3,10 @@ kaboom()
 loadSprite("bean", "sprites/bean.png")
 loadSprite("ghosty", "sprites/ghosty.png")
 loadSprite("steel", "sprites/steel.png")
+loadSprite("grass", "sprites/grass.png")
 
 const nucleus = add([
-	sprite("ghosty"),
+	sprite("grass"),
 	pos(center()),
 	anchor("center"),
 ])
@@ -35,7 +36,11 @@ nucleus.onUpdate(() => {
 	})
 
 })
-
+add([
+		sprite("steel"),
+		pos(25, 25),
+		// Both objects must have area() component to enable collision detection between
+		area(),
 
 add([
 		sprite("steel"),
