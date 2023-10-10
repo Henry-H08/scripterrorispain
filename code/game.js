@@ -1,39 +1,46 @@
+
+// Adding game objects to screen
+
+// Start a kaboom game
 kaboom()
 
-loadSprite("bean", "sprites/bean.png")
-loadSprite("ghosty", "sprites/ghosty.png")
-loadSprite("steel", "sprites/steel.png")
-loadSprite("grass", "sprites/grass.png")
+// Load a sprite asset from "sprites/bean.png", with the name "bean"
+loadSprite("bean", "/sprites/bean.png")
+
+setBackground(3, 152, 252)
 
 
 
-const nucleus = add([
-	sprite("ghosty"),
-	pos(center()),
+const bean = add([
+	sprite("bean"),
+	pos(300,550),
+	scale(6),
 	anchor("center"),
+	area(),
+	'bean',
 ])
+var beans = 0
 
-// Add children
-for (let i = 12; i < 24; i++) {
+const beantext = add([
+	text(beans),
+	pos(300,300),
+	color(BLACK),
+	scale(4),
+	anchor("center"),
 
-	nucleus.add([
-		sprite("bean"),
-		rotate(0),
-		anchor(vec2(i).scale(0.25)),
-		{
-			speed: i * 8,
-		},
 	])
 
-}
+onClick('bean', (a) => {
+	beans = beans + 1;
+	debug.log(beans);
+	beantext.text = beans
+	
+});
 
-nucleus.onUpdate(() => {
+add([
+    pos(700, -3),
+    rect(500, 10000),
+    outline(4),
+    area(),
+])
 
-	nucleus.pos = center();
-
-	// update children
-	nucleus.children.forEach((child) => {
-		child.angle += child.speed * dt()
-	})
-
-})
