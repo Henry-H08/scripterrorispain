@@ -30,8 +30,7 @@ const beantext = add([
 onClick('bean', (a) => {
 	beans = beans + 1;
 	debug.log(beans);
-	onUpdate(() =>{
-		
+	onUpdate(() => {
 	beantext.text = beans;
 		})
 });
@@ -55,17 +54,18 @@ const ghosty = add([
 
 var ghostcost = 10;
 
+
 onClick('ghosty', (a) => {
 	if (beans >= ghostcost) {
 		ghosts = ghosts + 1
 		debug.log(ghosts)
 		beans = beans - ghostcost
 		wait(0.1, () => {
-		var ghostcost = ghostcost + 100
+		ghostcost = ghostcost + 15
 		loop(1, () => {
 			beans = beans + 0.5;
-					})
-		})
-				 }
-				})
+					  })
+						})
+							}
+						})
 
