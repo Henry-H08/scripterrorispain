@@ -1,37 +1,36 @@
 kaboom()
 
-loadSprite("bean", "/sprites/bean.png")
+loadSprite("egg", "/sprites/egg.png")
 loadSprite("ghosty", "/sprites/ghosty.png")
 
 setBackground(3, 152, 252)
 
 
 
-const bean = add([
-	sprite("bean"),
+const egg = add([
+	sprite("egg"),
 	pos(width()/4, height()/2),
 	scale(6),
 	anchor("center"),
 	area(),
-	'bean',
+	'egg',
 ]);
 
-var beans = 0;
+var eggs = 0;
 var ghosts = 0;
 
-const beantext = add([
-	text(beans),
+const eggtext = add([
+	text(eggs),
 	pos(300,300),
 	color(BLACK),
 	scale(2),
 	anchor("center"),
 ]);
 
-onClick('bean', (a) => {
-	beans = beans + 1;
-	debug.log(beans);
+onClick('egg', (a) => {
+	eggs = eggs + 1;
 	onUpdate(() => {
-	beantext.text = beans;
+	eggtext.text = eggs;
 		})
 });
 
@@ -56,14 +55,14 @@ var ghostcost = 10;
 
 
 onClick('ghosty', (a) => {
-	if (beans >= ghostcost) {
+	if (eggs >= ghostcost) {
 		ghosts = ghosts + 1
 		debug.log(ghosts)
-		beans = beans - ghostcost
+		eggs = eggs - ghostcost
 		wait(0.1, () => {
 		ghostcost = ghostcost + 15
 		loop(1, () => {
-			beans = beans + 0.5;
+			eggs = eggs + 0.5;
 					  })
 						})
 							}
