@@ -9,7 +9,7 @@ setBackground(3, 152, 252)
 
 const egg = add([
 	sprite("egg"),
-	pos(width()/4, height()/2),
+	pos(width()/4 - 10, height()/2),
 	anchor("center"),
 	area(),
 	'egg',
