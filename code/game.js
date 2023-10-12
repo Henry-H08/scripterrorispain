@@ -1,7 +1,7 @@
 kaboom()
 
-loadSprite("egg", "/sprites/egg.png")
-loadSprite("ghosty", "/sprites/ghosty.png")
+loadSprite("egg", "sprites/egg.png")
+loadSprite("ghosty", "sprites/ghosty.png")
 
 setBackground(3, 152, 252)
 
