@@ -10,7 +10,7 @@ setBackground(3, 152, 252)
 const egg = add([
 	sprite("egg"),
 	pos(width()/4, height()/2),
-	scale(6),
+	scale(2),
 	anchor("center"),
 	area(),
 	'egg',
@@ -45,7 +45,7 @@ add([
 const ghosty = add([
 	sprite("ghosty"),
 	pos(800,100),
-	scale(3),
+	scale(2),
 	anchor("center"),
 	area(),
 	'ghosty',
