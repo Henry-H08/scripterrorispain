@@ -20,7 +20,7 @@ var ghosts = 0;
 
 const eggtext = add([
 	text(eggs),
-	pos(width()/4, hieght()/2.5),
+	pos(width()/4, height()/2.5),
 	color(BLACK),
 	scale(2),
 	anchor("center"),
