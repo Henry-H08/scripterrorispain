@@ -1,9 +1,5 @@
-// Adding game objects to screen
-
-// Start a kaboom game
 kaboom()
 
-// Load a sprite asset from "sprites/bean.png", with the name "bean"
 loadSprite("bean", "/sprites/bean.png")
 loadSprite("ghosty", "/sprites/ghosty.png")
 
@@ -18,26 +14,26 @@ const bean = add([
 	anchor("center"),
 	area(),
 	'bean',
-])
-var beans = 0
+]);
 
-var ghosts = 0
+var beans = 0;
+var ghosts = 0;
 
 const beantext = add([
 	text(beans),
 	pos(300,300),
 	color(BLACK),
-	scale(4),
+	scale(2),
 	anchor("center"),
-	
-
-	])
+]);
 
 onClick('bean', (a) => {
 	beans = beans + 1;
 	debug.log(beans);
-	beantext.text = beans
-	
+	onUpdate(() =>{
+		
+	beantext.text = beans;
+		})
 });
 
 add([
@@ -45,8 +41,8 @@ add([
     rect(width()/2, 10000),
     outline(8),
     area(),
-	color()
-])
+	color(),
+]);
 
 const ghosty = add([
 	sprite("ghosty"),
@@ -55,15 +51,21 @@ const ghosty = add([
 	anchor("center"),
 	area(),
 	'ghosty',
-])
+]);
 
-
+var ghostcost = 10;
 
 onClick('ghosty', (a) => {
-	ghosts = ghosts + 1
-});
+	if (beans >= ghostcost) {
+		ghosts = ghosts + 1
+		debug.log(ghosts)
+		beans = beans - ghostcost
+		wait(0.1, () => {
+		var ghostcost = ghostcost + 100
+		loop(1, () => {
+			beans = beans + 0.5;
+					})
+		})
+				 }
+				})
 
-if (ghosty = 1) {
-	
-	beans = beans + ghosty;
-}
