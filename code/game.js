@@ -34,7 +34,7 @@ onClick('egg', (a) => {
 });
 
 add([
-    pos(width()-200, -3),
+    pos(width()/1-200, -3),
     rect(width()/2, 10000),
     outline(8),
     area(),
@@ -43,7 +43,7 @@ add([
 
 const basicchickenfinal = add([
 	sprite("basicchickenfinal"),
-	pos(width()50,100),
+	pos(width()/1-50,100),
 	anchor("center"),
 	area(),
 	'basicchickenfinal',
