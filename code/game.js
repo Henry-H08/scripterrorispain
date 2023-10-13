@@ -1,7 +1,7 @@
 kaboom()
 
 loadSprite("egg", "sprites/egg.png")
-loadSprite("ghosty", "sprites/ghosty.png")
+loadSprite("basicchickenfinal", "sprites/basicchickenfinal.png")
 
 setBackground(3, 152, 252)
 
@@ -16,7 +16,7 @@ const egg = add([
 ]);
 
 var eggs = 0;
-var ghosts = 0;
+var basics = 0;
 
 const eggtext = add([
 	text(eggs),
@@ -41,25 +41,25 @@ add([
 	color(),
 ]);
 
-const ghosty = add([
-	sprite("ghosty"),
+const basicchickenfinal = add([
+	sprite("basicchickenfinal"),
 	pos(800,100),
 	scale(2),
 	anchor("center"),
 	area(),
-	'ghosty',
+	'basicchickenfinal',
 ]);
 
-var ghostcost = 10;
+var basiccost = 10;
 
 
-onClick('ghosty', (a) => {
-	if (eggs >= ghostcost) {
-		ghosts = ghosts + 1
-		debug.log(ghosts)
-		eggs = eggs - ghostcost
+onClick('basicchickenfinal', (a) => {
+	if (eggs >= basiccost) {
+		basics = basics + 1
+		debug.log(basics)
+		eggs = eggs - basiccost
 		wait(0.1, () => {
-		ghostcost = ghostcost + 15
+		basiccost = basiccost + 15
 		loop(1, () => {
 			eggs = eggs + 0.5;
 					  })
