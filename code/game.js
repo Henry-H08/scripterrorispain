@@ -43,7 +43,7 @@ add([
 
 const basicchickenfinal = add([
 	sprite("basicchickenfinal"),
-	pos(width()/1-50,100),
+	pos(width()-140,100),
 	anchor("center"),
 	area(),
 	'basicchickenfinal',
