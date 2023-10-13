@@ -34,7 +34,7 @@ onClick('egg', (a) => {
 });
 
 add([
-    pos(width()/1-200, -3),
+    pos(width()/2, -3),
     rect(width()/2, 10000),
     outline(8),
     area(),
