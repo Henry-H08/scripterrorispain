@@ -76,7 +76,7 @@ onClick('basicchickenfinal', (a) => {
 				
 				basicchickensum = basicchickensum + 1;
 					basicchickenamount.text = basicchickensum;
-		})
+		}
 	
 				})
 
