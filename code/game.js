@@ -55,7 +55,7 @@ const basicchickenamount = add([
     text(basicchickensum),
     color(black),
     pos(1200,100),
-    anchor("center),
+    anchor("center"),
 
 
 
