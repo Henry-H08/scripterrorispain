@@ -53,7 +53,7 @@ var basicchickensum = 0;
 
 const basicchickenamount = add([
     text(basicchickensum),
-    color(black),
+    color(BLACK),
     pos(1200,100),
     anchor("center"),
 ])
