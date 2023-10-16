@@ -56,7 +56,7 @@ const basicchickenamount = add([
     color(black),
     pos(1200,100),
     anchor("center"),
-
+])
 
 
 var basiccost = 10;
