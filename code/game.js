@@ -73,10 +73,10 @@ onClick('basicchickenfinal', (a) => {
 			eggs = eggs + 0.5;
 				})
 				})
-				onUpdate(() => {
+				
 				basicchickensum = basicchickensum + 1;
 					basicchickenamount.text = basicchickensum;
 		})
-	}
+	
 				})
 
