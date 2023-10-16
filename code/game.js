@@ -49,6 +49,16 @@ const basicchickenfinal = add([
 	'basicchickenfinal',
 ]);
 
+var basicchickensum
+
+const basicchickenamount = add([
+    text(basicchickensum),
+    color(black),
+    pos(1200,100),
+    anchor("center),
+
+
+
 var basiccost = 10;
 
 
@@ -61,8 +71,12 @@ onClick('basicchickenfinal', (a) => {
 		basiccost = basiccost + 15
 		loop(1, () => {
 			eggs = eggs + 0.5;
-					  })
-						})
-							}
-						})
+				})
+				})
+				onUpdate(() => {
+				basicchickensum = basicchickensum + 1;
+					basicchickenamount.text = basicchickensum;
+		})
+	}
+				})
 
