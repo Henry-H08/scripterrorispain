@@ -49,7 +49,7 @@ const basicchickenfinal = add([
 	'basicchickenfinal',
 ]);
 
-var basicchickensum
+var basicchickensum = 0;
 
 const basicchickenamount = add([
     text(basicchickensum),
